@@ -1,4 +1,4 @@
-package hello;
+package com.robert.solr;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
