@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd3765d8-e5d4-468b-818e-fe33b09cc91a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/Application.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/ApplicationContextHolder.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/ApplicationContextHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Comment.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Comment.class" />
@@ -16,25 +15,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskEntry.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskEntry.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskItem.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskItem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntry.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/commentModal.html" afterPath="$PROJECT_DIR$/src/main/resources/static/commentModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/commentModal.html" afterPath="$PROJECT_DIR$/target/classes/static/commentModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/controllers.js" afterPath="$PROJECT_DIR$/target/classes/static/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/createTables.sql" afterPath="$PROJECT_DIR$/src/main/java/createTables.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/modTaskItemModal.html" afterPath="$PROJECT_DIR$/src/main/resources/static/modTaskItemModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/modTaskItemModal.html" afterPath="$PROJECT_DIR$/target/classes/static/modTaskItemModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/modTaskStatusModal.html" afterPath="$PROJECT_DIR$/src/main/resources/static/modTaskStatusModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/modTaskStatusModal.html" afterPath="$PROJECT_DIR$/target/classes/static/modTaskStatusModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/stylesheet.css" afterPath="$PROJECT_DIR$/target/classes/static/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/whatDoTemplate4.html" afterPath="$PROJECT_DIR$/src/main/resources/static/whatDoTemplate4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/whatDoTemplate4.html" afterPath="$PROJECT_DIR$/target/classes/static/whatDoTemplate4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -970,7 +955,7 @@
       <workItem from="1448348298377" duration="782000" />
       <workItem from="1448388879171" duration="694000" />
       <workItem from="1448392689490" duration="611000" />
-      <workItem from="1448395706948" duration="21455000" />
+      <workItem from="1448395706948" duration="21480000" />
     </task>
     <task id="LOCAL-00001" summary="Commit of TaskEntry and TaskEntryRepository tests">
       <created>1448393065778</created>
@@ -984,11 +969,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448400762685</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merged in all prototype Organizer files">
+      <created>1448497479875</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1448497479875</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62224000" />
+    <option name="totallyTimeSpent" value="62249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="39" width="1808" height="999" extended-state="0" />
