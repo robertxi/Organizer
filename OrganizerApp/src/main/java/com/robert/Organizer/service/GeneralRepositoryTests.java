@@ -4,8 +4,7 @@ package com.robert.Organizer.service;
 import java.util.*;
 
 
-import com.robert.Organizer.model.TaskEntry;
-import com.robert.Organizer.model.TaskEntryRepository;
+import com.robert.Organizer.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.domain.Page;
@@ -17,83 +16,79 @@ import org.springframework.stereotype.Service;
 @Configurable
 public class GeneralRepositoryTests {
 
-//    @Autowired
-//    private TaskRepository taskRepository;
-
     @Autowired
     private TaskEntryRepository taskEntryRepository;
 
 
 
-    public void run(){
-        createSampleData();
-//        findByTitle();
+    public void init(){
+        loadSampleData();
         findByTitleOrDescription();
 
     }
 
-//    private void addTaskToIndex(String id, String title, String description){
-//        Task task = new Task();
-////        List<TaskItem> list = new ArrayList<>();
-//
-//        task.setId(id);
-//        task.setTitle(title);
-//        task.setDescription(description);
-//        taskRepository.save(task);
-//    }
+    private void loadSampleData(){
+        List<TaskItem> taskItems = OrganizerDAO.getAllTaskItems();
+        List<Task> tasks = OrganizerDAO.getAllTasks();
+        List<Comment> comments = OrganizerDAO.getAllComments();
 
-    private void addTaskEntryToIndex(String id, String title, String description, String type, String user_id, long date_created, long date_modified){
-        TaskEntry entry = new TaskEntry();
-        entry.setId(type+id);
-        entry.setTitle(title);
-        entry.setDescription(description);
-        entry.setType(type);
-        entry.setUser_id(user_id);
-        entry.setDate_created(date_created);
-        entry.setDate_modified(date_modified);
-        taskEntryRepository.save(entry);
-
+        convertToEntries(taskItems, tasks, comments);
     }
 
-    private void createSampleData() {
-        if(taskEntryRepository.count()==0){
-            addTaskEntryToIndex("2", "workout", "get pumped!", "Task", "1", System.currentTimeMillis(), System.currentTimeMillis() );
-            addTaskEntryToIndex("3", "Melissa's Birthday", "plan out the party!", "Task", "1", System.currentTimeMillis(), System.currentTimeMillis());
-            addTaskEntryToIndex("4", "put turkey in oven", "to do", "TaskItem", "3", System.currentTimeMillis(), System.currentTimeMillis() );
-            addTaskEntryToIndex("1", "Wow, that's great!", "", "Comment", "3", System.currentTimeMillis(), System.currentTimeMillis() );
+    private void convertToEntries(List<TaskItem> taskItems, List<Task> tasks, List<Comment> comments){
+        for(Task task : tasks){
+            convertTaskToEntry(task);
         }
+        for(TaskItem item : taskItems){
+            convertTaskItemToEntry(item);
+        }
+        for(Comment comment : comments){
+            convertCommentToEntry(comment);
+        }
+    }
 
-//        if(taskRepository.count()==0) {
-//
-//            System.out.println(taskRepository.count());
-//
-//            System.out.println("ADDING TASKS TO REPOSITORY");
-//            addTaskToIndex("11", "workout", "get pumped");
-//            addTaskToIndex("12", "Melissa's birthday", "plan out the party");
-//            addTaskToIndex("13", "winter Break!", "what to do");
-//            addTaskToIndex("14", "bucket list", "life fun");
-//            addTaskToIndex("15", "wedding plans", "lots to do for the big day!");
-//            addTaskToIndex("16", "Thanksgiving break", "tasks to finish before thanksgiving");
-//            System.out.println("FINISHED TASKS TO REPOSITORY");
-//        }
+    private void convertCommentToEntry(Comment task){
+        TaskEntry entry = new TaskEntry();
+        entry.setDate_created(task.getDate_created().getTime());
+        entry.setTitle(task.getTitle());
+        entry.setType(task.getType());
+        entry.setUser_id(Integer.toString(task.getUser_id()));
+        entry.setId(task.getTitle()+task.getId());
+        taskEntryRepository.save(entry);
+    }
+
+    private void convertTaskItemToEntry(TaskItem item){
+        TaskEntry entry = new TaskEntry();
+        entry.setDate_created(item.getDate_created().getTime());
+        entry.setDate_modified(item.getDate_modified().getTime());
+        entry.setDescription(item.getDescription());
+        entry.setTitle(item.getTitle());
+        entry.setType(item.getType());
+        entry.setUser_id(Integer.toString(item.getUser_id()));
+        entry.setId(item.getTitle() + item.getId());
+        taskEntryRepository.save(entry);
+    }
+    private void convertTaskToEntry(Task task){
+        TaskEntry entry = new TaskEntry();
+        entry.setDate_created(task.getDate_created().getTime());
+        entry.setDate_modified(task.getDate_modified().getTime());
+        entry.setDescription(task.getDescription());
+        entry.setTitle(task.getTitle());
+        entry.setType(task.getType());
+        entry.setUser_id(Integer.toString(task.getUser_id()));
+        entry.setId(task.getTitle() + task.getId());
+        taskEntryRepository.save(entry);
     }
 
     public void findByTitleOrDescription(){
         System.out.println("FINDING ENTRY BY TITLE OR DESCRIPTION");
-        Page<TaskEntry> entryPage = taskEntryRepository.findByTitleOrDescription("turkey", "party", new PageRequest(0, 10));
+        Page<TaskEntry> entryPage = taskEntryRepository.findByTitleOrDescription("test", "test", new PageRequest(0, 10));
         List<TaskEntry> entries = entryPage.getContent();
 
         for ( TaskEntry entry : entries){
             System.out.println(entry.toString());
         }
     }
-//
-//    public void findByTitle(){
-//        System.out.println("FINDING TASKS BY TITLE");
-//        List<Task> tasks = taskRepository.findByTitle("break");
-//        for(Task task: tasks){
-//            System.out.println(task.toString());
-//        }
-//    }
+
 
 }

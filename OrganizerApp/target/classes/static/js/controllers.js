@@ -1,6 +1,4 @@
-/**
- * Created by RobertXi on 9/29/15.
- */
+
 var whatDoApp = angular.module('whatDoApp', ['ngRoute', 'ui.bootstrap', 'ngCookies', 'ngMessages']);
 
 whatDoApp.config(['$routeProvider', function ($routeProvider) {
@@ -183,12 +181,12 @@ whatDoApp.controller('ModalInstanceCtrl', function ($scope, $http, $modalInstanc
         };
         console.log(data);
         var res = $http.put('http://localhost:8080/updateTaskItem/', data);
-        res.success(function (data, status, headers, config) {
+        res.success(function (data) {
             $scope.list[$scope.list.indexOf(task)] = data;
             $scope.currentDisplayTask.taskList = data.taskList;
             $modalInstance.close();
         });
-        res.error(function (data, status, headers, config) {
+        res.error(function (data) {
             alert("failure message: " + JSON.stringify({data: data}));
         });
         $modalInstance.close();
@@ -206,12 +204,12 @@ whatDoApp.controller('ModalInstanceCtrl', function ($scope, $http, $modalInstanc
         };
         console.log(data);
         var res = $http.put('http://localhost:8080/updateTaskItem/', data);
-        res.success(function (data, status, headers, config) {
+        res.success(function (data) {
             $scope.list[$scope.list.indexOf(task)] = data;
             $scope.currentDisplayTask.taskList = data.taskList;
             $modalInstance.close();
         });
-        res.error(function (data, status, headers, config) {
+        res.error(function (data) {
             alert("failure message: " + JSON.stringify({data: data}));
         });
         $modalInstance.close();

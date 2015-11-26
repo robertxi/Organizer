@@ -8,11 +8,14 @@ import com.robert.Organizer.service.*;
 import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.*;
 
 @RestController
 public class HelloController {
 
+    private Date date;
+    private Timestamp timestamp;
 
     @RequestMapping(value = "/loginAuth", method = RequestMethod.POST)
     public JSONObject loginAuth(@RequestBody JSONObject obj) {
@@ -31,13 +34,16 @@ public class HelloController {
 
     @RequestMapping(value = "/registerUser", method = RequestMethod.POST)
     public void registerUser(@RequestBody JSONObject obj) {
+        date = new Date();
+        timestamp = new Timestamp(date.getTime());
+
         User user = new User();
         user.setUsername((String) obj.get("username"));
         user.setPassword((String) obj.get("password"));
         user.setfName((String) obj.get("fName"));
         user.setlName((String) obj.get("lName"));
         user.setEmail((String) obj.get("email"));
-        user.setDate_created((String) obj.get("date_created"));
+        user.setDate_created(timestamp);
         UserService.register(user);
     }
 
@@ -76,14 +82,18 @@ public class HelloController {
 
     @RequestMapping(value = "/addTaskItem", method = RequestMethod.POST)
     public Task addTaskItem(@RequestBody JSONObject obj) {
+        date = new Date();
+        timestamp = new Timestamp(date.getTime());
+
         int user_id=OrganizerDAO.ifAuth((String)obj.get("token"));
         if(user_id!=-1) {
             TaskItem item = new TaskItem();
-            item.setContent((String) obj.get("content"));
+            item.setTitle((String) obj.get("content"));
             item.setTask_id((int) obj.get("task_id"));
-            item.setStatus((String) obj.get("status"));
-            item.setDate_created((String) obj.get("date_created"));
-            item.setDate_modified((String) obj.get("date_modified"));
+            item.setDescription((String) obj.get("status"));
+            item.setDate_created(timestamp);
+            item.setDate_modified(timestamp);
+            item.setUser_id(user_id);
             TaskItemService.addTaskItem(item);
             Task ret = TaskService.getTask(item.getTask_id());
             ret.setTaskList(TaskService.getTaskItems(ret.getId()));
@@ -97,14 +107,17 @@ public class HelloController {
     @RequestMapping(value = "/updateTaskItem", method = RequestMethod.PUT)
     public Task updateTaskItem(@RequestBody JSONObject obj) {
         int user_id=OrganizerDAO.ifAuth((String)obj.get("token"));
+        date = new Date();
+        timestamp = new Timestamp(date.getTime());
         if(user_id!=-1) {
             TaskItem item = new TaskItem();
 
-            item.setContent((String) obj.get("content"));
+            item.setTitle((String) obj.get("content"));
             item.setTask_id((int) obj.get("task_id"));
             item.setId((int) obj.get("id"));
-            item.setStatus((String) obj.get("status"));
-            item.setDate_modified((String) obj.get("date_modified"));
+            item.setDescription((String) obj.get("status"));
+            item.setDate_modified(timestamp);
+            item.setUser_id(user_id);
             TaskItemService.updateTaskItem(item);
             Task ret = TaskService.getTask(item.getTask_id());
             //again, 1 is just a temporary User ID
@@ -118,13 +131,16 @@ public class HelloController {
 
     @RequestMapping(value = "/addNewTask", method = RequestMethod.POST)
     public Task addNewTask(@RequestBody JSONObject obj) {
+        date = new Date();
+        timestamp = new Timestamp(date.getTime());
+
         int user_id = OrganizerDAO.ifAuth((String) obj.get("token"));
         if (user_id != -1) {
             Task task = new Task();
             task.setTitle((String) obj.get("title"));
             task.setUser_id(user_id);
-            task.setDate_created((String) obj.get("date_created"));
-            task.setDate_modified((String) obj.get("date_modified"));
+            task.setDate_created(timestamp);
+            task.setDate_modified(timestamp);
             task.setDescription((String) obj.get("description"));
             TaskService.addNewTask(task);
             Task retList;
@@ -138,13 +154,16 @@ public class HelloController {
 
     @RequestMapping(value = "/addNewComment", method = RequestMethod.POST)
     public List<Comment> addNewComment(@RequestBody JSONObject obj) {
+        date = new Date();
+        timestamp = new Timestamp(date.getTime());
+
         int user_id=OrganizerDAO.ifAuth((String)obj.get("token"));
         if(user_id!=-1) {
             Comment comment = new Comment();
             comment.setTaskitem_id((int) obj.get("taskitem_id"));
-            comment.setDate_created((String) obj.get("date_created"));
+            comment.setDate_created(timestamp);
             comment.setUser_id(user_id);
-            comment.setContent((String) obj.get("content"));
+            comment.setTitle((String) obj.get("content"));
             List<Comment> retList = CommentService.addNewComment(comment);
             return retList;
         }else{

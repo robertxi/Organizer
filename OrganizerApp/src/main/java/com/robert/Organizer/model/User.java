@@ -1,9 +1,11 @@
 package com.robert.Organizer.model;
 
+import java.sql.Timestamp;
+
 /**
  * Created by RobertXi on 11/24/15.
  */
-public class User {
+public class User extends OrganizerSuperClass{
 
 
     private int id;
@@ -12,7 +14,7 @@ public class User {
     private String fName;
     private String lName;
     private String email;
-    private String date_created;
+    private Timestamp date_created;
     private String token;
 
     public String getToken() {
@@ -71,11 +73,11 @@ public class User {
         this.email = email;
     }
 
-    public String getDate_created() {
+    public Timestamp getDate_created() {
         return date_created;
     }
 
-    public void setDate_created(String date_created) {
+    public void setDate_created(Timestamp date_created) {
         this.date_created = date_created;
     }
 

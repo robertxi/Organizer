@@ -2,6 +2,8 @@ package com.robert.Organizer.model;
 
 import org.apache.solr.client.solrj.beans.Field;
 
+import java.sql.Timestamp;
+
 /**
  * Created by RobertXi on 11/23/15.
  */

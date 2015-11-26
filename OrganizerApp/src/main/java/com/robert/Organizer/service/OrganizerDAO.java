@@ -43,13 +43,16 @@ public class OrganizerDAO {
     private static final String CHECK_USERNAME = "SELECT * FROM users WHERE username=?";
     private static final String LOGIN = "SELECT * FROM users WHERE username=? AND password=?";
     private static final String CHECKAUTH = "SELECT * FROM users WHERE token=?";
+    private static final String GET_ALL_TASKS = "SELECT * FROM task";
+    private static final String GET_ALL_TASKITEMS = "SELECT * FROM task_item";
+    private static final String GET_ALL_COMMENTS = "SELECT * FROM comments";
 
     //updates
     private static final String REGISTER_USER = "INSERT INTO users (username, password, fName, lName, email, date_created, token) VALUES(?,?,?,?,?,?,?)";
-    private static final String INSERT_NEW_COMMENT = "INSERT INTO comments(taskitem_id,content,date_created,user_id) VALUES (?,?,?,?)";
-    private static final String INSERT_TASK_ITEM = "INSERT INTO task_item (task_id,content,date_created,date_modified,status) VALUES (?,?,?,?,?)";
+    private static final String INSERT_NEW_COMMENT = "INSERT INTO comments(taskitem_id,title,date_created,user_id) VALUES (?,?,?,?)";
+    private static final String INSERT_TASK_ITEM = "INSERT INTO task_item (task_id,title,date_created,date_modified,description, user_id) VALUES (?,?,?,?,?,?)";
     private static final String ADD_NEW_TASK = "INSERT INTO task (user_id, title, description, date_created, date_modified) VALUES (?,?,?,?,?)";
-    private static final String UPDATE_TASK_ITEM = "UPDATE task_item SET content=?, status=?, date_modified=? WHERE id=? ";
+    private static final String UPDATE_TASK_ITEM = "UPDATE task_item SET title=?, description=?, date_modified=? WHERE id=? ";
     private static final String REMOVE_TASK_ITEM_COMMENT = "DELETE FROM comments WHERE taskitem_id=?";
     private static final String REMOVE_TASK_ITEM = "DELETE FROM task_item WHERE id=?";
     private static final String DELETE_TASK = "DELETE FROM task WHERE id = ?";
@@ -60,6 +63,61 @@ public class OrganizerDAO {
     //######################
     //QUERIES
     //######################
+
+
+    public static List<Task> getAllTasks(){
+        List<Task> ret = getAllTasksImpl(GET_ALL_TASKS);
+        return ret;
+    }
+
+    public static List<Comment> getAllComments(){
+        List<Comment> ret = getAllCommentsImpl(GET_ALL_COMMENTS);
+        return ret;
+    }
+    public static List<Comment> getAllCommentsImpl(String query){
+        List<Comment> ret = null;
+        try{
+            DataSource datasource= MyDataSourceFactory.INSTANCE.getDataSource();
+            QueryRunner run = new QueryRunner(datasource);
+            ResultSetHandler<List<Comment>> rH = new BeanListHandler<>(Comment.class);
+            ret = run.query(query, rH);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static List<TaskItem> getAllTaskItems(){
+        List<TaskItem> ret = getAllTaskItemsImpl(GET_ALL_TASKITEMS);
+        return ret;
+    }
+    public static List<TaskItem> getAllTaskItemsImpl(String query){
+        List<TaskItem> ret = null;
+        try{
+            DataSource datasource= MyDataSourceFactory.INSTANCE.getDataSource();
+            QueryRunner run = new QueryRunner(datasource);
+            ResultSetHandler<List<TaskItem>> rH = new BeanListHandler<>(TaskItem.class);
+            ret = run.query(query, rH);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static List<Task> getAllTasksImpl(String query){
+        List<Task> ret = null;
+        try {
+            DataSource dataSource = MyDataSourceFactory.INSTANCE.getDataSource();
+            QueryRunner run = new QueryRunner(dataSource);
+            ResultSetHandler<List<Task>> rH = new BeanListHandler<>(Task.class);
+            ret = run.query(query, rH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
+        return ret;
+    }
+
     public static int ifAuth(String token) {
         queryParams = new Object[]{token};
         User user = ifAuthImpl(CHECKAUTH, queryParams);
@@ -135,7 +193,6 @@ public class OrganizerDAO {
 
     public static List<Comment> getCommentList(int id) {
         queryParams = new Object[]{id};
-        //String getCommentListFinal=String.format(GET_COMMENT_LIST,id);
         List<Comment> retList = getCommentListImpl(GET_COMMENT_LIST, queryParams);
         return retList;
     }
@@ -183,7 +240,6 @@ public class OrganizerDAO {
 
     public static TaskItem getTaskItemById(int id) {
         queryParams = new Object[]{id};
-        //String queryFinal = String.format(SELECT_TASKITEM_BY_ID, id);
         TaskItem ret = getTaskItemByIdImpl(SELECT_TASKITEM_BY_ID, queryParams);
         return ret;
     }
@@ -204,7 +260,6 @@ public class OrganizerDAO {
 
     public static List<TaskItem> getTaskItems(int task_id) {
         queryParams = new Object[]{task_id};
-        //String selectTasksFinal = String.format(SELECT_TASKS, TaskService.getId(task));
         List<TaskItem> retList = getTaskItemSet(SELECT_TASKS, queryParams);
         return retList;
     }
@@ -283,40 +338,33 @@ public class OrganizerDAO {
     }
 
     public static void addNewComment(Comment comment) {
-        Object[] params = new Object[]{comment.getTaskitem_id(), comment.getContent(), comment.getDate_created(), comment.getUser_id()};
-        //String insertNewCommentFinal = String.format(INSERT_NEW_COMMENT,comment.getTaskitem_id(),comment.getContent(),comment.getDate_created(),comment.getUser_id());
+        Object[] params = new Object[]{comment.getTaskitem_id(), comment.getTitle(), comment.getDate_created(), comment.getUser_id()};
         executeUpdate(INSERT_NEW_COMMENT, params);
     }
 
     public static void addNewTask(Task task) {
         Object[] params = new Object[]{task.getUser_id(), task.getTitle(), task.getDescription(), task.getDate_created(), task.getDate_modified()};
-        //String addNewTaskFinal=String.format(ADD_NEW_TASK,task.getUser_id(),task.getTitle(),task.getDescription(),task.getDate_created(),task.getDate_modified());
         executeUpdate(ADD_NEW_TASK, params);
     }
 
     public static TaskItem updateTaskItem(TaskItem item) {
-        Object[] params = new Object[]{item.getContent(), item.getStatus(), item.getDate_modified(), item.getId()};
-        //String updateTaskItemFinal=String.format(UPDATE_TASK_ITEM,item.getContent(),item.getStatus(),item.getDate_modified(),item.getId());
+        Object[] params = new Object[]{item.getTitle(), item.getDescription(), item.getDate_modified(), item.getId()};
         executeUpdate(UPDATE_TASK_ITEM, params);
         TaskItem ret = TaskItemService.getTaskItem(item.getId());
         return ret;
     }
 
     public static void addTaskItem(TaskItem item) {
-        Object[] params = new Object[]{item.getTask_id(), item.getContent(), item.getDate_created(), item.getDate_modified(), item.getStatus()};
-        //String insertTaskItemFinal = String.format(INSERT_TASK_ITEM,item.getTask_id(),item.getContent(),item.getDate_created(),item.getDate_modified(),item.getStatus());
+        Object[] params = new Object[]{item.getTask_id(), item.getTitle(), item.getDate_created(), item.getDate_modified(), item.getDescription(), item.getUser_id()};
         executeUpdate(INSERT_TASK_ITEM, params);
     }
 
     public static void deleteTask(int task_id) {
         Object[] paramsTask = new Object[]{task_id};
         Object[] paramsItems = new Object[]{task_id};
-//        String deleteTaskFinal = String.format(DELETE_TASK, id);
-//        String deleteTaskItemsFinal = String.format(DELETE_TASK_ITEMS,id);
         List<TaskItem> itemList = TaskService.getTaskItems(task_id);
         for (TaskItem item : itemList) {
             Object[] params = new Object[]{item.getId()};
-            //String removeTaskItemCommentFinal = String.format(REMOVE_TASK_ITEM_COMMENT,item.getId());
             executeUpdate(REMOVE_TASK_ITEM_COMMENT, params);
         }
         executeUpdate(DELETE_TASK_ITEMS, paramsItems);
@@ -326,13 +374,11 @@ public class OrganizerDAO {
 
     public static void removeTaskItemComments(int taskItem_id) {
         Object[] params = new Object[]{taskItem_id};
-        //String removeTaskItemCommentFinal=String.format(REMOVE_TASK_ITEM_COMMENT, item.getId());
         executeUpdate(REMOVE_TASK_ITEM_COMMENT, params);
     }
 
     public static void removeTaskItem(int taskItem_id) {
         Object[] params = new Object[]{taskItem_id};
-        //String removeTaskItemFinal = String.format(REMOVE_TASK_ITEM,taskItemID);
         executeUpdate(REMOVE_TASK_ITEM, params);
     }
 

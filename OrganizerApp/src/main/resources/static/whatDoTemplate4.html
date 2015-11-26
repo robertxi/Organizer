@@ -54,17 +54,17 @@
                     <uib-accordion-group ng-repeat="item in currentDisplayTask.taskList">
                         <uib-accordion-heading id="item-heading">
                             <div id="statusWrapper" ng-click="openAccor=!openAccor">
-                                <h4>{{item.content}}
+                                <h4>{{item.title}}
                                     <i id="carrot"class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': openAccor, 'glyphicon-chevron-right': !openAccor}"></i>
                                 </h4>
                             </div>
                         </uib-accordion-heading>
                         <div id="taskItemContent">
                             <div id="statusContent">
-                                <h4 class="label label-info">Status</h4>: {{item.status}}
+                                <h4 class="label label-info">Status</h4>: {{item.description}}
                                 <div class="btn-group" role="itemGroup" id="modButtonsWrapper">
                                     <button type="button" class="btn btn-default">
-                                        <div uib-dropdown is-open="status.isopen">
+                                        <div uib-dropdown is-open="description.isopen">
                                             <span  class="glyphicon glyphicon-cog" uib-dropdown-toggle ng-disabled="disabled"></span>
                                             <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
                                                 <li role="menuitem">
@@ -90,7 +90,7 @@
                             <div id="commentContent">
                                 <ul class="list-group" id="commentListGroup">
                                     <li id="commentBlock"class="list-group-item" ng-repeat="comment in item.commentList">
-                                        <h5 class="label label-default">{{comment.date_created}}:</h5> {{comment.content}}
+                                        <h5 class="label label-default">{{comment.date_created}}:</h5> {{comment.title}}
                                     </li>
                                 </ul>
                             </div>

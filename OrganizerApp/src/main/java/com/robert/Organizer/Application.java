@@ -26,7 +26,7 @@ public class Application {
 
         GeneralRepositoryTests tests = ApplicationContextHolder.getContext().getBean(GeneralRepositoryTests.class);
 
-        tests.run();
+        tests.init();
 
     }
 
