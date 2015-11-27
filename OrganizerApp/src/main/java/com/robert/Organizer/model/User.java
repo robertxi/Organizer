@@ -8,13 +8,13 @@ import java.sql.Timestamp;
 public class User extends OrganizerSuperClass{
 
 
-    private int id;
+    //private int id;
     private String username;
     private String password;
     private String fName;
     private String lName;
     private String email;
-    private Timestamp date_created;
+    //private Timestamp date_created;
     private String token;
 
     public String getToken() {
@@ -23,14 +23,6 @@ public class User extends OrganizerSuperClass{
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -71,14 +63,6 @@ public class User extends OrganizerSuperClass{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Timestamp getDate_created() {
-        return date_created;
-    }
-
-    public void setDate_created(Timestamp date_created) {
-        this.date_created = date_created;
     }
 
 

@@ -213,13 +213,11 @@ public class OrganizerDAO {
 
     public static Task getTaskByTitle(int user_id, String title) {
         queryParams = new Object[]{user_id, title};
-        String getTaskByTitleFinal = String.format(GET_TASK_BY_TITLE, user_id, title);
         return getTaskImpl(GET_TASK_BY_TITLE, queryParams);
     }
 
     public static Task getTaskById(int task_id) {
         queryParams = new Object[]{task_id};
-        String getTaskFinal = String.format(GET_TASK, task_id);
         Task ret = getTaskImpl(GET_TASK, queryParams);
         return ret;
     }

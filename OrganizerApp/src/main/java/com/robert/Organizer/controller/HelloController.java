@@ -1,11 +1,11 @@
 package com.robert.Organizer.controller;
 
-import com.robert.Organizer.model.Comment;
-import com.robert.Organizer.model.Task;
-import com.robert.Organizer.model.TaskItem;
-import com.robert.Organizer.model.User;
+import com.robert.Organizer.model.*;
 import com.robert.Organizer.service.*;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -17,6 +17,19 @@ public class HelloController {
     private Date date;
     private Timestamp timestamp;
 
+
+    @RequestMapping(value = "/searchTask", method = RequestMethod.GET)
+    public @ResponseBody List<Task> searchTask (@RequestParam("searchQuery") String query, @RequestParam("usrToken") String token){
+        int user_id = OrganizerDAO.ifAuth(token);
+
+        if(user_id!=-1){
+            GeneralRepositoryTests SolrSearch = ApplicationContextHolder.getContext().getBean(GeneralRepositoryTests.class);
+            List<Task> list = SolrSearch.doTaskSearch(query, user_id);
+            return list;
+        }else{
+            return null;
+        }
+    }
     @RequestMapping(value = "/loginAuth", method = RequestMethod.POST)
     public JSONObject loginAuth(@RequestBody JSONObject obj) {
         String token;

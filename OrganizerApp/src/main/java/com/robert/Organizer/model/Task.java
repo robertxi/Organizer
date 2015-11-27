@@ -10,18 +10,18 @@ import java.util.List;
  */
 public class Task extends OrganizerSuperClass{
 
-    private int id;
-    private int user_id;
-    private String title;
-    private String description;
-    private Timestamp date_created;
-    private Timestamp date_modified;
+//    private int id;
+//    private int user_id;
+//    private String title;
+//    private String description;
+//    private Timestamp date_created;
+//    private Timestamp date_modified;
     private List<TaskItem> TaskList;
     private int taskListSize;
-    private String type = "task";
+//    private String type = "task";
 
-    public String getType(){
-        return type;
+    public Task(){
+        super.setType("task");
     }
 
     public int getTaskListSize() {return taskListSize;}
@@ -34,54 +34,6 @@ public class Task extends OrganizerSuperClass{
 
     public void setTaskList(List<TaskItem> taskList) {
         TaskList = taskList;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Timestamp getDate_created() {
-        return date_created;
-    }
-
-    public void setDate_created(Timestamp date_created) {
-        this.date_created = date_created;
-    }
-
-    public Timestamp getDate_modified() {
-        return date_modified;
-    }
-
-    public void setDate_modified(Timestamp date_modified) {
-        this.date_modified = date_modified;
     }
 
 

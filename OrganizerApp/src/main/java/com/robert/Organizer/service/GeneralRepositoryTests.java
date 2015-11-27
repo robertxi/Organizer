@@ -37,50 +37,34 @@ public class GeneralRepositoryTests {
 
     private void convertToEntries(List<TaskItem> taskItems, List<Task> tasks, List<Comment> comments){
         for(Task task : tasks){
-            convertTaskToEntry(task);
+            convertObjectToEntry(task);
         }
         for(TaskItem item : taskItems){
-            convertTaskItemToEntry(item);
+            System.out.println(item.getDate_modified());
+            convertObjectToEntry(item);
         }
         for(Comment comment : comments){
-            convertCommentToEntry(comment);
+            System.out.println(comment.getDate_modified());
+            convertObjectToEntry(comment);
         }
     }
 
-    private void convertCommentToEntry(Comment task){
+    private void convertObjectToEntry(OrganizerSuperClass obj){
         TaskEntry entry = new TaskEntry();
-        entry.setDate_created(task.getDate_created().getTime());
-        entry.setTitle(task.getTitle());
-        entry.setType(task.getType());
-        entry.setUser_id(Integer.toString(task.getUser_id()));
-        entry.setId(task.getTitle()+task.getId());
-        taskEntryRepository.save(entry);
-    }
+        entry.setDate_created(obj.getDate_created().getTime());
+        entry.setTitle(obj.getTitle());
+        entry.setType(obj.getType());
+        entry.setUser_id(Integer.toString(obj.getUser_id()));
+        entry.setId(obj.getTitle() + obj.getId());
 
-    private void convertTaskItemToEntry(TaskItem item){
-        TaskEntry entry = new TaskEntry();
-        entry.setDate_created(item.getDate_created().getTime());
-        entry.setDate_modified(item.getDate_modified().getTime());
-        entry.setDescription(item.getDescription());
-        entry.setTitle(item.getTitle());
-        entry.setType(item.getType());
-        entry.setUser_id(Integer.toString(item.getUser_id()));
-        entry.setId(item.getTitle() + item.getId());
+        //comment is missing date modified and description, this only runs for task and items
+        if(null!= obj.getDate_modified() && null != obj.getDescription()){
+            entry.setDate_modified(obj.getDate_modified().getTime());
+            entry.setDescription(obj.getDescription());
+        }
         taskEntryRepository.save(entry);
     }
-    private void convertTaskToEntry(Task task){
-        TaskEntry entry = new TaskEntry();
-        entry.setDate_created(task.getDate_created().getTime());
-        entry.setDate_modified(task.getDate_modified().getTime());
-        entry.setDescription(task.getDescription());
-        entry.setTitle(task.getTitle());
-        entry.setType(task.getType());
-        entry.setUser_id(Integer.toString(task.getUser_id()));
-        entry.setId(task.getTitle() + task.getId());
-        taskEntryRepository.save(entry);
-    }
-
-    public void findByTitleOrDescription(){
+    public List<TaskEntry> findByTitleOrDescription(){
         System.out.println("FINDING ENTRY BY TITLE OR DESCRIPTION");
         Page<TaskEntry> entryPage = taskEntryRepository.findByTitleOrDescription("test", "test", new PageRequest(0, 10));
         List<TaskEntry> entries = entryPage.getContent();
@@ -88,6 +72,19 @@ public class GeneralRepositoryTests {
         for ( TaskEntry entry : entries){
             System.out.println(entry.toString());
         }
+        return entries;
+    }
+
+    public List<Task> doTaskSearch(String query, int user_id){
+        List<TaskEntry> list = taskEntryRepository.findByTitleOrDescription(query, query);
+        List<Task> ret = null;
+        for(TaskEntry entry : list){
+            if(entry.getType().equals("task")){
+                Task task = OrganizerDAO.getTaskByTitle(user_id, entry.getTitle());
+                ret.add(task);
+            }
+        }
+        return ret;
     }
 
 

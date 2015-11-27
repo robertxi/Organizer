@@ -5,22 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd3765d8-e5d4-468b-818e-fe33b09cc91a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/ApplicationContextHolder.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/ApplicationContextHolder.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/TaskRepository.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Comment.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Comment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/GeneralRepositoryTests.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/GeneralRepositoryTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/controller/HelloController.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/controller/HelloController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/OrganizerDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/service/OrganizerDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Task.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskEntry.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskEntry.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskItem.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/TaskItem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/robert/Organizer/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/commentModal.html" afterPath="$PROJECT_DIR$/target/classes/static/commentModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/controllers.js" afterPath="$PROJECT_DIR$/target/classes/static/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/modTaskItemModal.html" afterPath="$PROJECT_DIR$/target/classes/static/modTaskItemModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/modTaskStatusModal.html" afterPath="$PROJECT_DIR$/target/classes/static/modTaskStatusModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/stylesheet.css" afterPath="$PROJECT_DIR$/target/classes/static/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/whatDoTemplate4.html" afterPath="$PROJECT_DIR$/target/classes/static/whatDoTemplate4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gs-spring-boot.iws" />
@@ -48,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,135 +55,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrganizerSuperClass.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.075630255">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#450#451#0" expanded="true" />
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#620#621#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#794#795#0" expanded="true" />
-                <element signature="e#828#829#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#928#929#0" expanded="true" />
-                <element signature="e#970#971#0" expanded="true" />
-                <element signature="e#1005#1006#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1302#1303#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1400#1401#0" expanded="true" />
-                <element signature="e#1432#1433#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizerDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-97.77778">
-              <caret line="195" column="62" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.025210084">
+              <caret line="1" column="100" selection-start-line="1" selection-start-column="100" selection-end-line="1" selection-end-column="100" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskEntry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntry.java">
+      <file leaf-file-name="whatDoTemplate4.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/whatDoTemplate4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+            <state vertical-scroll-proportion="-4.375">
+              <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-              <folding>
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#439#440#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#738#739#0" expanded="true" />
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -192,8 +78,8 @@
       <file leaf-file-name="HelloController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-45.555557">
-              <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+            <state vertical-scroll-proportion="-12.777778">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -253,19 +139,19 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/stylesheet.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/ApplicationContextHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/BookRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/createTables.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java" />
       </list>
     </option>
   </component>
@@ -290,7 +176,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="22" />
-    <option name="y" value="39" />
+    <option name="y" value="38" />
     <option name="width" value="1808" />
     <option name="height" value="999" />
   </component>
@@ -955,7 +841,7 @@
       <workItem from="1448348298377" duration="782000" />
       <workItem from="1448388879171" duration="694000" />
       <workItem from="1448392689490" duration="611000" />
-      <workItem from="1448395706948" duration="21480000" />
+      <workItem from="1448395706948" duration="28375000" />
     </task>
     <task id="LOCAL-00001" summary="Commit of TaskEntry and TaskEntryRepository tests">
       <created>1448393065778</created>
@@ -975,14 +861,20 @@
       <option name="project" value="LOCAL" />
       <updated>1448497479875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Solr initial load and TaskEntry class">
+      <created>1448497551533</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1448497551533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62249000" />
+    <option name="totallyTimeSpent" value="69144000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="39" width="1808" height="999" extended-state="0" />
+    <frame x="22" y="38" width="1808" height="999" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1026,7 +918,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit of TaskEntry and TaskEntryRepository tests" />
     <MESSAGE value="Merged in all prototype Organizer files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged in all prototype Organizer files" />
+    <MESSAGE value="Added Solr initial load and TaskEntry class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Solr initial load and TaskEntry class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1051,7 +944,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
-          <line>83</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -1087,36 +980,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
           <line>25</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
-          <line>38</line>
+          <line>46</line>
           <properties />
-          <option name="timeStamp" value="60" />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="67" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1338,26 +1219,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/whatDoTemplate4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/BookRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1370,34 +1235,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5744431">
-          <caret line="211" column="32" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/TaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07033998">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/ApplicationContextHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1440,28 +1281,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-97.77778">
-          <caret line="195" column="62" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4789916">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1368#1369#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1435#1436#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/solrTests/BookRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12605043">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/controller/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-45.555557">
-          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        <state vertical-scroll-proportion="-12.777778">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="115" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1471,67 +1406,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/GeneralRepositoryTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding>
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/TaskEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.9747899">
           <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1539,41 +1423,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/model/OrganizerSuperClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robert/Organizer/service/OrganizerDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.075630255">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.45882353">
+          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/whatDoTemplate4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025210084">
+          <caret line="1" column="100" selection-start-line="1" selection-start-column="100" selection-end-line="1" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>

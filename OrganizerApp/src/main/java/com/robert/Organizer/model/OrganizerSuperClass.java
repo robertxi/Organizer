@@ -9,11 +9,11 @@ import java.util.List;
 public class OrganizerSuperClass {
     private int id;
     private int user_id;
-    private String title;
-    private String description;
-    private Timestamp date_created;
-    private Timestamp date_modified;
-    private String type;
+    private String title = null;
+    private String description = null;
+    private Timestamp date_created = null;
+    private Timestamp date_modified = null;
+    private String type = null;
 
     public int getId() {
         return id;
