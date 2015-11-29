@@ -260,6 +260,8 @@ whatDoApp.controller('toDoListCtrl', function ($scope, $http, $uibModal, $rootSc
     $scope.currentDisplayTaskIndex = null;
     $scope.animationsEnabled = true;
     $scope.currentDisplayTaskItem = null;
+    $scope.searchParam = null;
+
 
     $scope.logout = function () {
         $rootScope.authToken = null;
@@ -361,6 +363,17 @@ whatDoApp.controller('toDoListCtrl', function ($scope, $http, $uibModal, $rootSc
             $scope.currentDisplayTask = $scope.list[0];
             $scope.currentDisplayTaskIndex = 0;
         });
+    };
+
+    $scope.search = function(){
+        var query = $scope.searchParam;
+        var usrtoken = $rootScope.authToken;
+        $http.get('http://localhost:8080/searchTask', {params: {'usrToken':usrtoken, 'searchQuery':query}}).then(function(response){
+            $scope.list = response.data;
+            $scope.currentDisplayTask = $scope.list[0];
+            $scope.currentDisplayTaskIndex = 0;
+        });
+
     };
 
     $scope.setDisplayTask = function (task) {

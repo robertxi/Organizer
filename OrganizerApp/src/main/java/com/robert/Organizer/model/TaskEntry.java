@@ -4,9 +4,7 @@ import org.apache.solr.client.solrj.beans.Field;
 
 import java.sql.Timestamp;
 
-/**
- * Created by RobertXi on 11/23/15.
- */
+
 public class TaskEntry {
 
     @Field
@@ -14,6 +12,10 @@ public class TaskEntry {
 
     @Field
     private String title;
+
+
+    @Field
+    private String obj_id;
 
     @Field
     private String description;
@@ -29,6 +31,10 @@ public class TaskEntry {
 
     @Field
     private long date_modified;
+
+    public String getObj_id() {return obj_id;}
+
+    public void setObj_id(String obj_id) {this.obj_id = obj_id;}
 
 
     public String getUser_id() {

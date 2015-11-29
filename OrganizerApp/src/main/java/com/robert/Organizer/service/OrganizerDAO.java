@@ -1,9 +1,6 @@
 package com.robert.Organizer.service;
 
-import com.robert.Organizer.model.Comment;
-import com.robert.Organizer.model.Task;
-import com.robert.Organizer.model.TaskItem;
-import com.robert.Organizer.model.User;
+import com.robert.Organizer.model.*;
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -15,6 +12,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import javax.sql.DataSource;
 import java.security.SecureRandom;
 import java.sql.Connection;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Random;
 
@@ -43,9 +41,9 @@ public class OrganizerDAO {
     private static final String CHECK_USERNAME = "SELECT * FROM users WHERE username=?";
     private static final String LOGIN = "SELECT * FROM users WHERE username=? AND password=?";
     private static final String CHECKAUTH = "SELECT * FROM users WHERE token=?";
-    private static final String GET_ALL_TASKS = "SELECT * FROM task";
-    private static final String GET_ALL_TASKITEMS = "SELECT * FROM task_item";
-    private static final String GET_ALL_COMMENTS = "SELECT * FROM comments";
+    private static final String GET_ALL_TASKS = "SELECT * FROM task ORDER BY date_modified DESC";
+    private static final String GET_ALL_TASKITEMS = "SELECT * FROM task_item ORDER BY date_modified DESC";
+    private static final String GET_ALL_COMMENTS = "SELECT * FROM comments ORDER BY date_created DESC";
 
     //updates
     private static final String REGISTER_USER = "INSERT INTO users (username, password, fName, lName, email, date_created, token) VALUES(?,?,?,?,?,?,?)";
@@ -64,47 +62,105 @@ public class OrganizerDAO {
     //QUERIES
     //######################
 
+    private static final String GET_UPDATE_TASK = "SELECT * FROM task WHERE date_modified > ? ORDER BY date_modified DESC";
+    private static final String GET_UPDATE_COMMENT = "SELECT * FROM comments WHERE date_created > ? ORDER BY date_CREATED DESC";
+    private static final String GET_UPDATE_TASKITEM = "SELECT * FROM task_item WHERE date_modified > ? ORDER BY date_modified DESC";
 
-    public static List<Task> getAllTasks(){
+    private static final String GET_TASK_BY_ID = "SELECT * FROM task_item WHERE id = ?";
+    public static TaskItem getTaskId(int taskItemID){
+        queryParams = new Object[]{taskItemID};
+        TaskItem ret = getTaskIdImpl(GET_TASK_BY_ID, queryParams);
+        return ret;
+    }
+    private static TaskItem getTaskIdImpl(String query, Object[] params){
+        TaskItem ret = null;
+        try {
+            DataSource dataSource = MyDataSourceFactory.INSTANCE.getDataSource();
+            QueryRunner run = new QueryRunner(dataSource);
+            ResultSetHandler<TaskItem> rH = new BeanHandler<>(TaskItem.class);
+
+            ret = run.query(query, rH, params);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
+        return ret;
+    }
+
+    public static List<OrganizerSuperClass> getRecentTasks(Timestamp date) {
+        System.out.println("date in organizer = "+date);
+        queryParams = new Object[]{date};
+        List<OrganizerSuperClass> ret = getSuperClassUpdateQuery(GET_UPDATE_TASK, queryParams);
+        return ret;
+    }
+
+    public static List<OrganizerSuperClass> getRecentItems(Timestamp date) {
+        queryParams = new Object[]{date};
+        List<OrganizerSuperClass> ret = getSuperClassUpdateQuery(GET_UPDATE_TASKITEM, queryParams);
+        return ret;
+    }
+
+    public static List<OrganizerSuperClass> getRecentComments(Timestamp date) {
+        queryParams = new Object[]{date};
+        List<OrganizerSuperClass> ret = getSuperClassUpdateQuery(GET_UPDATE_COMMENT, queryParams);
+        return ret;
+    }
+
+    private static List<OrganizerSuperClass> getSuperClassUpdateQuery(String query, Object[] params) {
+        List<OrganizerSuperClass> ret = null;
+        try {
+            DataSource datasource = MyDataSourceFactory.INSTANCE.getDataSource();
+            QueryRunner run = new QueryRunner(datasource);
+            ResultSetHandler<List<OrganizerSuperClass>> rH = new BeanListHandler<>(OrganizerSuperClass.class);
+            ret = run.query(query, rH, params);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static List<Task> getAllTasks() {
         List<Task> ret = getAllTasksImpl(GET_ALL_TASKS);
         return ret;
     }
 
-    public static List<Comment> getAllComments(){
+    public static List<Comment> getAllComments() {
         List<Comment> ret = getAllCommentsImpl(GET_ALL_COMMENTS);
         return ret;
     }
-    public static List<Comment> getAllCommentsImpl(String query){
+
+    public static List<Comment> getAllCommentsImpl(String query) {
         List<Comment> ret = null;
-        try{
-            DataSource datasource= MyDataSourceFactory.INSTANCE.getDataSource();
+        try {
+            DataSource datasource = MyDataSourceFactory.INSTANCE.getDataSource();
             QueryRunner run = new QueryRunner(datasource);
             ResultSetHandler<List<Comment>> rH = new BeanListHandler<>(Comment.class);
             ret = run.query(query, rH);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ret;
     }
 
-    public static List<TaskItem> getAllTaskItems(){
+    public static List<TaskItem> getAllTaskItems() {
         List<TaskItem> ret = getAllTaskItemsImpl(GET_ALL_TASKITEMS);
         return ret;
     }
-    public static List<TaskItem> getAllTaskItemsImpl(String query){
+
+    public static List<TaskItem> getAllTaskItemsImpl(String query) {
         List<TaskItem> ret = null;
-        try{
-            DataSource datasource= MyDataSourceFactory.INSTANCE.getDataSource();
+        try {
+            DataSource datasource = MyDataSourceFactory.INSTANCE.getDataSource();
             QueryRunner run = new QueryRunner(datasource);
             ResultSetHandler<List<TaskItem>> rH = new BeanListHandler<>(TaskItem.class);
             ret = run.query(query, rH);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ret;
     }
 
-    public static List<Task> getAllTasksImpl(String query){
+    public static List<Task> getAllTasksImpl(String query) {
         List<Task> ret = null;
         try {
             DataSource dataSource = MyDataSourceFactory.INSTANCE.getDataSource();
@@ -213,7 +269,10 @@ public class OrganizerDAO {
 
     public static Task getTaskByTitle(int user_id, String title) {
         queryParams = new Object[]{user_id, title};
-        return getTaskImpl(GET_TASK_BY_TITLE, queryParams);
+        Task ret = getTaskImpl(GET_TASK_BY_TITLE, queryParams);
+        ret.setTaskList(TaskService.getTaskItems(ret.getId()));
+        ret.setTaskListSize(ret.getTaskList().size());
+        return ret;
     }
 
     public static Task getTaskById(int task_id) {

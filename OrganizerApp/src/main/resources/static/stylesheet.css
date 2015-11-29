@@ -275,3 +275,15 @@ text-align: left;
 #settingButton{
 width: 110px;
 }
+
+#searchForm{
+width: 70%;
+display: inline-block;
+}
+#searchButton{
+width: 25%;
+display: inline-block;
+}
+#searchBarWrapper{
+text-align: center;
+}

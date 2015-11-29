@@ -2,6 +2,7 @@ package com.robert.Organizer;
 
 import com.robert.Organizer.service.ApplicationContextHolder;
 import com.robert.Organizer.service.GeneralRepositoryTests;
+import com.robert.Organizer.service.SolrUpdater;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +11,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.repository.config.EnableSolrRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @EnableSolrRepositories(basePackages = {"com.robert.Organizer"})
 @SpringBootApplication
+@EnableScheduling
 public class Application {
 
 //    @Autowired
@@ -42,5 +45,9 @@ public class Application {
         return new SolrTemplate(server);
     }
 
+    @Bean
+    public SolrUpdater solrUpdater(){
+        return new SolrUpdater();
+    }
 
 }
