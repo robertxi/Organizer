@@ -1,7 +1,7 @@
 package com.robert.Organizer;
 
 import com.robert.Organizer.service.ApplicationContextHolder;
-import com.robert.Organizer.service.GeneralRepositoryTests;
+import com.robert.Organizer.service.SolrRepositoryService;
 import com.robert.Organizer.service.SolrUpdater;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
@@ -27,7 +27,7 @@ public class Application {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
 
-        GeneralRepositoryTests tests = ApplicationContextHolder.getContext().getBean(GeneralRepositoryTests.class);
+        SolrRepositoryService tests = ApplicationContextHolder.getContext().getBean(SolrRepositoryService.class);
 
         tests.init();
 

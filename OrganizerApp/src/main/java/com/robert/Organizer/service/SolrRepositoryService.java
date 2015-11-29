@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Configurable
-public class GeneralRepositoryTests {
+public class SolrRepositoryService {
 
     @Autowired
     private TaskEntryRepository taskEntryRepository;

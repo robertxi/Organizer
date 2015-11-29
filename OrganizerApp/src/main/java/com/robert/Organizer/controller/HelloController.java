@@ -3,9 +3,6 @@ package com.robert.Organizer.controller;
 import com.robert.Organizer.model.*;
 import com.robert.Organizer.service.*;
 import org.json.simple.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -23,7 +20,7 @@ public class HelloController {
         int user_id = OrganizerDAO.ifAuth(token);
 
         if(user_id!=-1){
-            GeneralRepositoryTests SolrSearch = ApplicationContextHolder.getContext().getBean(GeneralRepositoryTests.class);
+            SolrRepositoryService SolrSearch = ApplicationContextHolder.getContext().getBean(SolrRepositoryService.class);
             List<Task> list = SolrSearch.doTaskSearch(query, user_id);
             return list;
         }else{
